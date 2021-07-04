@@ -4,6 +4,14 @@
 
 Content contains a graph of content. Lessons are contained within modules, which are contained within units. 
 
+The idea of this is that:
+- the content is fully defined in one place (lessons, lesson plans, quizzes, assessment, tags etc)
+- the same file structure contains everything that students and teachers need
+- only lessons are available to students. The other things (tags, challenges) are hidden from them
+	- students can access only the lessons. Teachers can access everything
+- might require us to write a bash script that copies over every lesson to a new repo, but not the hidden content, then pushes that to a public repo
+	- ideally as a github workflow
+
 ## Units
 
 ### Units contain a metadata file called `.unit.yaml`
@@ -50,6 +58,6 @@ This is a markdown file named `.Lesson plan.md`, which details what happens in e
 ### Every lesson has challenges
 Challenges are named by a random 8 character string
 
-### Challenges inherit tags and prerequisites
+#### Challenges inherit tags and prerequisites
 
 Challenges inherit tags and prerequisites from both their module and their unit.
